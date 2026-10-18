@@ -10,13 +10,6 @@ import (
 	"unsafe"
 )
 
-// receivedPacket holds a parsed TCP packet payload and its source address.
-type receivedPacket struct {
-	data    []byte
-	srcIP   net.IP
-	srcPort uint16
-}
-
 // TCPReceiver listens for incoming spoofed TCP SYN packets.
 // Uses Rust for the raw socket recv+parse, Go for goroutine+channel delivery.
 type TCPReceiver struct {

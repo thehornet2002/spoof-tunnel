@@ -31,7 +31,9 @@ jobs:
           workspaces: rust/xdp-ebpf
 
       - name: Install bpf-linker
-        run: cargo install bpf-linker
+        run: |
+          curl -sSfL https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz | tar -xz -C ~/.cargo/bin
+          cargo binstall -y bpf-linker
 
       - name: Build eBPF program
         working-directory: rust/xdp-ebpf

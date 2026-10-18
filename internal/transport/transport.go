@@ -14,6 +14,13 @@ type Receiver interface {
 	Close() error
 }
 
+// receivedPacket holds a parsed packet payload and its source address.
+type receivedPacket struct {
+	data    []byte
+	srcIP   net.IP
+	srcPort uint16
+}
+
 // SenderConfig holds config shared by all senders.
 type SenderConfig struct {
 	SourceIP   net.IP   // Spoofed source address (single IP, used if SourceIPs is empty)
