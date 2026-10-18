@@ -1,3 +1,5 @@
+//go:build !windows
+
 package transport
 
 // #include "spoof_transport.h"

@@ -35,8 +35,8 @@ go.work.sum
 client-config.json
 server-config.json
 # Binaries
-spoof
-spoof-panel
+/spoof
+/spoof-panel
 
 # Rust build artifacts
 rust/target/

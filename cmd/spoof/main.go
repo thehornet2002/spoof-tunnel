@@ -464,9 +464,3 @@ func testerCmd() *cobra.Command {
 
 	return cmd
 }
-
-func requireRoot() {
-	if os.Geteuid() != 0 {
-		log.Fatal("must run as root (raw sockets require CAP_NET_RAW)")
-	}
-}
